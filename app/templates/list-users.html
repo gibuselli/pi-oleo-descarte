@@ -1,0 +1,54 @@
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="../static/fonts/stylesheet.css" rel="stylesheet">
+    <link href="../static/styles/estilizacaoform.css"rel="stylesheet">
+    <link href="../static/styles/form.css" rel="stylesheet">
+    <link href="../static/styles/style.css" rel="stylesheet">
+    <title>Óleo Descarte</title>
+    
+</head>
+<body>
+  <header>
+    <div id="title">
+       <h1>Óleo</h1>
+        <h1>Descarte</h1>
+    </div>
+    <ul>
+      <a href="list"><li>Quero Coletar</li></a>
+     <a href="register"><li>Cadastre-se para doar</li></a>
+    <a href="/" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+    </ul>
+</header>
+    <class="container">
+      <br><br>
+      <aside>
+        <h2>Colete óleo aqui!</h2>
+        <p>Peça para retirar com um dos doadores disponíveis e avisaremos sobre seu interesse.</p><br>
+      </aside>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Cidade</th>
+          <th>Bairro</th>
+          <th>Litros de óleo</th>
+          </tr>
+        {% for user in users %}
+        <tr>
+          <th>{{ user.name }}</th>
+          <th>{{ user.city }}</th>
+          <th>{{ user.district }}</th>
+          <th>{{ user.oil_quantity }}</th>
+          <td><button class="button">Retire aqui!</button></td>
+          </tr>
+          {% endfor %}
+        </table>
+    </main>
+  </div>
+     
+
+</body>
+</html>

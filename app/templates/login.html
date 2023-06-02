@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/fonts/stylesheet.css" rel="stylesheet">
+    <link href="../static/styles/style.css" rel="stylesheet">
+    <link href="../static/styles/estilizacaoform.css"rel="stylesheet">
+    <title>Óleo Descarte</title>
+</head>
+<body>    
+    <header>
+        <div id="title">
+            <h1>Óleo</h1>
+             <h1>Descarte</h1>
+         </div>
+        <ul>
+          <a href="list"><li>Quero Coletar</li></a>
+         <a href="register"><li>Cadastre-se para doar</li></a>
+        <a href="/" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+        </ul>
+    </header>
+
+    <main>
+        <aside>
+            <h2>Quero Doar</h2>
+            <p>Descartar óleo de cozinha usado de maneira correta é essencial para evitar danos à natureza. Quando jogado na pia ou no vaso sanitário, o óleo contamina rios, lagos e oceanos, comprometendo a vida marinha e a qualidade da água que consumimos. Ao descartá-lo de forma consciente, podemos transformar um problema em uma solução valiosa.</p>
+            <form action="/login" enctype="multipart/form-data" method="post">
+                <input name="username" type="email"placeholder="E-mail">
+                <input name="password" type="password"placeholder="Senha">
+                <input type="submit"value="Entrar">
+            </form>
+            <br />
+            <span class="criarConta"><a href="/register">Ainda não possui uma conta? Cadastre-se!</a></span>
+        </aside>
+        <article>
+            <img src="../static/images/home.svg" alt="pessoas">
+        </article>
+    </main>
+    
+</body>
+</html>
