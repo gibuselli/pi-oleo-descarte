@@ -10,7 +10,8 @@ A versão atual do **Óleo Descarte** foi desenvolvida com as seguintes tecnolog
 * **HTML e CSS**: para a criação dos templates estáticos que compõem toda a aplicação.
 * **Javascript**: para a interação de elementos como modais e popups.
 * **Python/Fastapi**: linguagem e framework web para lidar com validações, interação com servidor e gerenciamento de rotas.
-* **SQLite**: base de dados relacional embutida na aplicação
+* **Jinja**: Mecanismo de templates web para Python.
+* **SQLite**: base de dados relacional embutida na aplicação.
 
 ### Como utilizar?
 Atualmente, a aplicação roda apenas localmente, mas logo será hospedada em domínio para uso geral.
@@ -20,6 +21,11 @@ Atualmente, a aplicação roda apenas localmente, mas logo será hospedada em do
 * Abra um terminal no nível do módulo *app*
 * Rode o comando `uvicorn main:app --reload --port <porta>` ou `uvicorn main:app --reload` para rodar na porta padrão 8000
 * Acesse localhost:8000 (ou a porta que você escolheu)
+
+### Futuras melhorias:
+* Migraçao da base de dados para PostgreSQL.
+* Hospedagem em domínio para uso em produção.
+* Eventuais refatorações para melhores práticas com a stack utilizada.
 
 ### Desenvolvedores:
 * @gibuselli
