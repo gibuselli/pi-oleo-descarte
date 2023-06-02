@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link href="../static/fonts/stylesheet.css" rel="stylesheet">
-    <link href="../static/styles/estilizacaoform.css"rel="stylesheet">
-    <link href="../static/styles/form.css" rel="stylesheet">
-    <link href="../static/styles/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/fonts/stylesheet.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles/estilizacaoform.css') }}"rel="stylesheet">
+    <link href="{{ url_for('static', path='/styles/form.css') }}" rel="stylesheet">
     <title>Óleo Descarte</title>
     
 </head>
 <body>
-  <header>
-    <div id="title">
-       <h1>Óleo</h1>
-        <h1>Descarte</h1>
-    </div>
-    <ul>
-      <a href="list"><li>Quero Coletar</li></a>
-     <a href="register"><li>Cadastre-se para doar</li></a>
-    <a href="/" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
-    </ul>
-</header>
-    <class="container">
+  {% extends 'header.html' %}
+
+  {% block content %}
+
+  <window id="popup" class="popup">
+    <h2>Digite seus dados!</h2>
+    <label>Email</label>
+    <input type="email" id="email" name="e-mail" placeholder="Digite aqui..." required >
+    <label>Telefone</label>
+    <input type="tel" id="fone" name="fone" placeholder="Digite aqui..." required maxlength="9">
+
+    <button class="btnFecharPopup">Enviar</button>
+    <a href="#" id="btnFecharPopup">Fechar</a>
+  </window>   
+
+    <div>
       <br><br>
       <aside>
         <h2>Colete óleo aqui!</h2>
@@ -42,13 +46,16 @@
           <th>{{ user.city }}</th>
           <th>{{ user.district }}</th>
           <th>{{ user.oil_quantity }}</th>
-          <td><button class="button">Retire aqui!</button></td>
+          <td><button class="btnAbrirPopup button">Retire aqui!</button></td>
           </tr>
           {% endfor %}
         </table>
     </main>
   </div>
      
+  <script type="text/javascript" src="../static/script/script.js"></script>
 
 </body>
 </html>
+
+{% endblock content %}

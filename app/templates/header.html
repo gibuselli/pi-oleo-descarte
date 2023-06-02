@@ -1,0 +1,25 @@
+<header>
+    <div id="title">
+        <h1>Óleo</h1>
+         <h1>Descarte</h1>
+     </div>
+    <ul>
+        <a href="list"><li>Quero Coletar</li></a>
+        {% if is_authenticated %}
+        <a href="profile"><li>Minha Conta</li></a>
+        {% endif %}
+        {% if is_authenticated %}
+        <a href="logout"><li>Sair</li></a>
+        {% endif %}
+        {% if not is_authenticated %}
+        <a href="register"><li>Cadastre-se para doar</li></a>
+        {% endif %}
+        {% if not is_authenticated %}
+        <a href="/" id="inscreva-se-btn"><li>Já tem uma conta?</li></a>
+        {% endif %}
+    </ul>
+</header>
+
+{% block content %}
+        
+{% endblock content %}
