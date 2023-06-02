@@ -86,18 +86,18 @@ tr:nth-child(even) {
 }
 
 .popup {
-  display: none; /* Inicia oculto */
-  position:fixed ;
+  display: none;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform:translate(-50%, -50%);
-  background-color: #b81212;
+  transform: translate(-50%, -50%);
+  background-color: #f2f7f5;
   padding: 20px;
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
 
- }
-
- .popup:target {
+.popup:target {
   display: block;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -106,7 +106,7 @@ tr:nth-child(even) {
   display: none;
 }
 
- .btnAbrirPopup {
+.btnAbrirPopup {
   padding: 10px 20px;
   background-color: #4CAF50;
   color: #ffffff;
@@ -114,10 +114,33 @@ tr:nth-child(even) {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  margin-right: 10px; 
- }
+  margin-right: 10px;
+}
 
- #btnFecharPopup{
+.popup h2 {
+  color: #4CAF50;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.popup label {
+  color: #4CAF50;
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+}
+
+.popup input[type="email"],
+.popup input[type="tel"] {
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #4CAF50;
+  margin-top: 5px;
+}
+
+.popup button[type="submit"] {
   padding: 10px 20px;
   background-color: #4CAF50;
   color: #ffffff;
@@ -125,17 +148,42 @@ tr:nth-child(even) {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  margin-right: 10px; 
- }
+  margin-top: 10px;
+}
 
+#btnFecharPopup {
+  padding: 10px 20px;
+  background-color: #f74f4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
+.btnFecharPopup {
+  padding: 8.3px 17.2px;
+  background-color: #f74f4f;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-decoration: none;
+}
 
-
-
-
-
-
-
+.btnEnviarPopup {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
 
 

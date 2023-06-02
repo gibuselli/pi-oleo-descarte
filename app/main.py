@@ -35,13 +35,16 @@ async def startup_event():
     create_tables()
 
 @app.get("/", response_class=HTMLResponse)
-async def render_login(request: Request, registered: Optional[bool] = False):
+async def render_login(request: Request, registered: Optional[bool] = False, loginFailed: Optional[bool] = False):
     is_authenticated = check_authenticated(request)
     
     if is_authenticated:
         return templates.TemplateResponse("profile.html", {"request": request})
     
-    return templates.TemplateResponse("login.html", {"request": request, "is_authenticated": is_authenticated, "registered": registered})
+    return templates.TemplateResponse("login.html",
+                                      {"request": request,
+                                       "is_authenticated": is_authenticated,
+                                       "registered": registered, "loginFailed": loginFailed})
 
 @app.get("/list", response_class=HTMLResponse)
 async def render_list(request: Request, db: Session = Depends(get_db)):
@@ -130,10 +133,10 @@ async def login(request: Request, form_data: OAuth2PasswordRequestForm = Depends
     user = get_user_by_email(form_data.username, db)
     
     if not user:
-        raise HTTPException(status_code=400, detail="Usuário ou senha incorretos")
+        return RedirectResponse(url="/?loginFailed=True", status_code=status.HTTP_302_FOUND)
     
     if not check_password(form_data.password, user.hashed_password):
-        raise HTTPException(status_code=400, detail="Usuário ou senha incorretos")
+        return RedirectResponse(url="/?loginFailed=True", status_code=status.HTTP_302_FOUND)
     
     token = jwt.encode({"user_id": user.id,
                                     "email": user.email,
